@@ -4,16 +4,17 @@ import "./App.css";
 import Articles from "./components/Articles";
 import Topics from "./components/Topics";
 import Comments from "./components/Comments";
-import UserProfile from "./components/User-profile";
+// import UserProfile from "./components/User-profile";
 import { Route } from "react-router-dom";
 
 class App extends Component {
   state = {
-    topics: []
+    topics: [],
+    articles: []
   };
 
   componentDidMount() {
-    this.getTopics();
+    this.getAllTopics();
   }
   render() {
     console.log(this.state);
@@ -26,16 +27,27 @@ class App extends Component {
           path="/topics"
           render={props => <Topics topics={this.state.topics} />}
         />
-        <Route exact path="/articles" render={props => <Articles />} />
+        <Route
+          exact
+          path="/articles"
+          render={props => <Articles articles={this.state.articles} />}
+        />
         <Route exact path="/comments" render={props => <Comments />} />
       </div>
     );
   }
 
-  getTopics = () => {
+  getAllArticles = () => {
+    fetch("https://nc-news-jo.herokuapp.com/api/articles")
+      .then(res => res.json())
+      .then(res => this.setState({ articles: res.articles }));
+  };
+
+  getAllTopics = () => {
     fetch("https://nc-news-jo.herokuapp.com/api/topics")
       .then(res => res.json())
-      .then(res => this.setState({ topics: res.topics }));
+      .then(res => this.setState({ topics: res.topics }))
+      .then(this.getAllArticles);
   };
 }
 

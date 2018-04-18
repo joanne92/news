@@ -6,11 +6,13 @@ class Topics extends Component {
   render() {
     return (
       <div>
-        <ul>
-          {this.props.topics.map(topic => {
-            <li>{topic.title}</li>;
-          })}
-        </ul>
+        {this.props.topics.map((topic, i) => {
+          return (
+            <div key={`${i}${topic}`}>
+              <p>{topic.title}</p>
+            </div>
+          );
+        })}
       </div>
     );
   }

@@ -5,14 +5,21 @@ import "./Articles.css";
 class Articles extends Component {
   render() {
     return (
-      <div>
-        <ul>
-          <li>Article 1</li>
-          <li>Article 2</li>
-          <li>Article 3</li>
-          <li>Article 4</li>
-          <li>Article 5</li>
-        </ul>
+      <div className="all-articles">
+        {/* <ul>
+          {this.props.articles.map((article, i) => {
+            return (
+              <div key={`${i}${article.title}`} className="article">
+                <p className="article-title">{article.title}</p>
+                <p className="article-body">{article.body}</p>
+                <li>{article.belongs_to}</li>
+                <li>{article.votes}</li>
+                <li>{article.created_by}</li>
+                <li>{article.comments}</li>
+              </div>
+            );
+          })}
+        </ul> */}
       </div>
     );
   }

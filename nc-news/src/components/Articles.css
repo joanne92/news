@@ -1,8 +1,12 @@
-.articles {
+.all-articles {
   background-color: rgb(201, 228, 150);
   text-align: center;
 }
 
 li {
-  display: block;
+  display: inline-block;
+}
+
+.article-title {
+  color: red;
 }
