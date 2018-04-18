@@ -3,6 +3,10 @@
   text-align: center;
 }
 
+.article {
+  background-color: rgb(150, 228, 224);
+}
+
 li {
   display: inline-block;
 }

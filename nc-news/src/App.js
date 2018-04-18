@@ -21,7 +21,11 @@ class App extends Component {
     return (
       <div className="container">
         <Header />
-        <Route exact path="/" render={props => <Articles />} />
+        <Route
+          exact
+          path="/"
+          render={props => <Articles articles={this.state.articles} />}
+        />
         <Route
           exact
           path="/topics"
@@ -47,7 +51,15 @@ class App extends Component {
     fetch("https://nc-news-jo.herokuapp.com/api/topics")
       .then(res => res.json())
       .then(res => this.setState({ topics: res.topics }))
-      .then(this.getAllArticles);
+      .then(this.getAllArticles)
+      .then(this.MostVotedArticles);
+  };
+
+  MostVotedArticles = () => {
+    const sortedArr = this.state.articles.sort((a, b) => {
+      return b.votes - a.votes;
+    });
+    this.setState({ articles: sortedArr });
   };
 }
 
