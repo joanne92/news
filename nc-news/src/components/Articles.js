@@ -15,23 +15,23 @@ class Articles extends Component {
     let { articles } = this.props;
     // console.log(this.state);
     return (
-      <div className="all-articles col-lg-8">
+      <div id="all-articles">
         <ul>
           {articles.map((article, i) => {
-            // console.log(article._id);
             return (
-              <div key={`${i}${article.title}`}>
-                <p>{i + 1}.)</p>
-
+              <div key={`${i}${article.title}`} className="article">
                 <Link
                   to={`/articles/${article._id}/comments`}
-                  className="heading"
+                  className="article-title"
                 >
                   {article.title}
                 </Link>
                 <p className="article-body">{article.body}</p>
-                <li>Votes: {article.votes}</li>
+                <i className="fa fa-arrow-circle-up" />
+                <li className="votes">{article.votes}</li>
+                <i className="fa fa-arrow-circle-down" />
                 <li>Comments: {article.comments}</li>
+                <li>{article.created_by}</li>
               </div>
             );
           })}
@@ -44,24 +44,23 @@ class Articles extends Component {
     fetch("https://nc-news-jo.herokuapp.com/api/users")
       .then(res => res.json())
       .then(res => this.setState({ users: res.users }));
-    this.getAllArticles();
   };
 
-  getAllArticles = () => {
-    fetch("https://nc-news-jo.herokuapp.com/api/articles")
-      .then(res => res.json())
-      .then(res => res.articles)
-      .then(articles => {
-        return articles.map(article => {
-          this.state.users.forEach(user => {
-            if (article.created_by === user._id) {
-              return (article.user = user.name);
-            }
-          });
-        });
-      })
-      .then(res => this.setState({ articles: res }));
-  };
+  // getAllArticles = () => {
+  //   fetch("https://nc-news-jo.herokuapp.com/api/articles")
+  //     .then(res => res.json())
+  //     .then(res => res.articles)
+  //     .then(articles => {
+  //       return articles.map(article => {
+  //         this.state.users.forEach(user => {
+  //           if (article.created_by === user._id) {
+  //             return (article.user = user.name);
+  //           }
+  //         });
+  //       });
+  //     })
+  //     .then(res => this.setState({ articles: res }));
+  // };
 }
 
 export default Articles;

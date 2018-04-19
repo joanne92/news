@@ -6,20 +6,18 @@ import { Link } from "react-router-dom";
 class Header extends Component {
   render() {
     return (
-      <div className="container">
-        <div className="col-lg-12">
-          <ul>
-            <Link to="/" className="heading header">
-              NC-News!
-            </Link>
-            <Link to="/topics" className="link">
-              Topics
-            </Link>
-            <Link to="/articles" className="link">
-              Articles
-            </Link>
-          </ul>
-        </div>
+      <div className="col-lg-12">
+        <ul>
+          <Link to="/" id="nc-header">
+            NC News
+          </Link>
+          <Link to="/topics" className="topic-name">
+            Topics
+          </Link>
+          <Link to="/articles" className="topic-name">
+            Articles
+          </Link>
+        </ul>
       </div>
     );
   }

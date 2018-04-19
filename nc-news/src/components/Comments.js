@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import "./Comments.css";
 class Comments extends Component {
   state = {
     comments: []
@@ -13,16 +13,28 @@ class Comments extends Component {
   }
 
   render() {
-    console.log("RENDERED");
     return (
-      <div className="all-comments">
+      <div id="all-comments">
+        <form action="">
+          Comment:
+          <input
+            type="text"
+            name="Comment"
+            id="comment-input"
+            placeholder="enter comment"
+          />
+          <button type="button" className="btn btn-success">
+            Submit
+          </button>
+        </form>
         <ul>
           {this.state.comments.map((comment, i) => {
             return (
               <div key={`${comment._id}`} className="comment">
-                <p>{i + 1}.)</p>
                 <p className="article-body">{comment.body}</p>
-                <li>Votes: {comment.votes}</li>
+                <i className="fa fa-arrow-circle-up" />
+                <li className="votes">{comment.votes}</li>
+                <i className="fa fa-arrow-circle-down" />
                 <li>User:{comment.created_by}</li>
                 <li>{comment.created_at}</li>
               </div>

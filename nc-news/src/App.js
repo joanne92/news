@@ -21,48 +21,52 @@ class App extends Component {
   render() {
     return (
       <div className="container">
-        <Header />
+        <div className="row">
+          <Header />
+        </div>
+        <div className="row">
+          <Route
+            exact
+            path="/"
+            render={props => (
+              <Articles articles={this.getMostPopular(this.state.articles)} />
+            )}
+          />
 
-        <Route
-          exact
-          path="/"
-          render={props => (
-            <Articles articles={this.getMostPopular(this.state.articles)} />
-          )}
-        />
+          <Route
+            exact
+            path="/topics"
+            render={props => <Topics topics={this.state.topics} />}
+          />
 
-        <Route
-          exact
-          path="/topics"
-          render={props => <Topics topics={this.state.topics} />}
-        />
+          <Route
+            exact
+            path="/articles"
+            render={props => <Articles articles={this.state.articles} />}
+          />
 
-        <Route
-          exact
-          path="/articles"
-          render={props => <Articles articles={this.state.articles} />}
-        />
-
-        <Route
-          exact
-          path="/articles/:topictitle"
-          render={props => {
-            return (
-              <Articles
-                articles={this.getArticlesByTopicId(
-                  props.match.params.topictitle
-                )}
-              />
-            );
-          }}
-        />
-        <Route
-          exact
-          path="/articles/:articleid/comments"
-          render={props => (
-            <Comments {...props} articleid={props.match.params.articleid} />
-          )}
-        />
+          <Route
+            exact
+            path="/articles/:topictitle"
+            render={props => {
+              return (
+                <Articles
+                  topics={this.state.topics}
+                  articles={this.getArticlesByTopicId(
+                    props.match.params.topictitle
+                  )}
+                />
+              );
+            }}
+          />
+          <Route
+            exact
+            path="/articles/:articleid/comments"
+            render={props => (
+              <Comments {...props} articleid={props.match.params.articleid} />
+            )}
+          />
+        </div>
       </div>
     );
   }

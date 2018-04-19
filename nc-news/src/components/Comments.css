@@ -1,0 +1,33 @@
+#all-comments {
+  background-color: rgb(203, 225, 182);
+}
+
+.comment {
+  background-color: white;
+  margin: 2%;
+  margin-right: 6%;
+  padding: 2%;
+  border: solid 1px white;
+  border-width: 5px;
+  border-radius: 25px;
+}
+
+/* #comment-input { */
+input {
+  /* padding-left: 30px; */
+  /* position: relative;
+  top: 20px;
+  left: 40px; */
+  margin: 10px;
+  height: 200px;
+  width: 500px;
+  border: 2px solid green;
+  border-radius: 20px;
+}
+
+input {
+  margin: 0 auto;
+}
+
+.btn.btn-success {
+}

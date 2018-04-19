@@ -1,21 +1,23 @@
 .col-lg-12 {
-  background-color: rgb(228, 150, 150);
+  background-color: rgb(127, 198, 150);
   text-align: center;
-  padding: 0px;
   height: 100px;
+  color: white;
 }
 
-li {
-  list-style: none;
-  display: inline-block;
+#nc-header {
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.topic-name {
   margin: 50px;
+  color: white;
+  font-size: 25px;
+  font-weight: normal;
 }
 
-.link {
-  margin: 50px;
-  font-size: 20px;
-}
-
-.heading.header {
-  font-size: 30px;
+.topic-name:hover {
+  color: white;
 }

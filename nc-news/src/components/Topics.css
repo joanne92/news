@@ -1,0 +1,24 @@
+#all-topics {
+  background-color: rgb(203, 225, 182);
+  height: 400px;
+}
+
+.topic {
+  background-color: white;
+  margin: 2%;
+  margin-right: 6%;
+  padding: 2%;
+  border: solid 1px white;
+  border-width: 5px;
+  border-radius: 25px;
+}
+
+.topic-title {
+  color: rgb(127, 198, 150);
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.topic-title:hover {
+  color: rgb(127, 198, 150);
+}
