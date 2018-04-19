@@ -9,7 +9,7 @@ class Header extends Component {
       <div className="container">
         <div className="col-lg-12">
           <ul>
-            <Link to="/" className="heading">
+            <Link to="/" className="heading header">
               NC-News!
             </Link>
             <Link to="/topics" className="link">
@@ -17,9 +17,6 @@ class Header extends Component {
             </Link>
             <Link to="/articles" className="link">
               Articles
-            </Link>
-            <Link to="/comments" className="link">
-              Comments
             </Link>
           </ul>
         </div>

@@ -13,4 +13,9 @@ li {
 
 .link {
   margin: 50px;
+  font-size: 20px;
+}
+
+.heading.header {
+  font-size: 30px;
 }

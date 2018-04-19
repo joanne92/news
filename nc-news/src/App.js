@@ -15,16 +15,20 @@ class App extends Component {
 
   componentDidMount() {
     this.getAllTopics();
+    this.getAllArticles();
   }
+
   render() {
-    console.log(this.state);
     return (
       <div className="container">
         <Header />
+
         <Route
           exact
           path="/"
-          render={props => <Articles articles={this.state.articles} />}
+          render={props => (
+            <Articles articles={this.getMostPopular(this.state.articles)} />
+          )}
         />
 
         <Route
@@ -36,12 +40,7 @@ class App extends Component {
         <Route
           exact
           path="/articles"
-          render={props => (
-            <Articles
-              articles={this.state.articles}
-              showAllArticles={props.match}
-            />
-          )}
+          render={props => <Articles articles={this.state.articles} />}
         />
 
         <Route
@@ -50,16 +49,35 @@ class App extends Component {
           render={props => {
             return (
               <Articles
-                articles={this.state.articles}
-                currentTopic={props.match.params.topictitle}
+                articles={this.getArticlesByTopicId(
+                  props.match.params.topictitle
+                )}
               />
             );
           }}
         />
-        <Route exact path="/comments" render={props => <Comments />} />
+        <Route
+          exact
+          path="/articles/:articleid/comments"
+          render={props => (
+            <Comments {...props} articleid={props.match.params.articleid} />
+          )}
+        />
       </div>
     );
   }
+
+  getUsers = () => {
+    fetch("https://nc-news-jo.herokuapp.com/api/users")
+      .then(res => res.json())
+      .then(res => this.setState({ users: res.users }));
+  };
+
+  getAllTopics = () => {
+    fetch("https://nc-news-jo.herokuapp.com/api/topics")
+      .then(res => res.json())
+      .then(res => this.setState({ topics: res.topics }));
+  };
 
   getAllArticles = () => {
     fetch("https://nc-news-jo.herokuapp.com/api/articles")
@@ -67,34 +85,25 @@ class App extends Component {
       .then(res => this.setState({ articles: res.articles }));
   };
 
-  getAllTopics = () => {
-    fetch("https://nc-news-jo.herokuapp.com/api/topics")
-      .then(res => res.json())
-      .then(res => this.setState({ topics: res.topics }))
-      .then(this.getAllArticles)
-      .then(this.MostVotedArticles);
+  getArticlesByTopicId = topictitle => {
+    let topicid;
+
+    this.state.topics.forEach(topic => {
+      if (topic.title === topictitle) {
+        topicid = topic._id;
+      }
+    });
+    return this.state.articles.filter(article => {
+      return article.belongs_to === topicid;
+    });
   };
 
-  // getTopicAndUserName = () => {
-  //   const { topics, articles } = this.state;
-  //   let newArticles;
-
-  //   // const topicKey = this.state.topics.reduce((acc, curr) => {
-  //   //   acc[curr.id] = curr.title;
-  //   // }, {});
-  //   console.log(articles);
-
-  //   // this.setState({ articles: newArticles });
-  // };
-
-  MostVotedArticles = () => {
-    const sortedArr = this.state.articles.sort((a, b) => {
-      return b.votes - a.votes;
-    });
-    this.setState({ articles: sortedArr });
-
-    this.getTopicAndUserName();
+  getMostPopular = arr => {
+    return arr
+      .sort((a, b) => {
+        return b.votes - a.votes;
+      })
+      .slice(0, 6);
   };
 }
-
 export default App;
