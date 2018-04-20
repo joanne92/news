@@ -4,7 +4,6 @@ import "./App.css";
 import Articles from "./components/Articles";
 import Topics from "./components/Topics";
 import Comments from "./components/Comments";
-// import UserProfile from "./components/User-profile";
 import { Route } from "react-router-dom";
 
 class App extends Component {
@@ -29,20 +28,25 @@ class App extends Component {
             exact
             path="/"
             render={props => (
-              <Articles articles={this.getMostPopular(this.state.articles)} />
+              <Articles
+                {...props}
+                articles={this.getMostPopular(this.state.articles)}
+              />
             )}
           />
 
           <Route
             exact
             path="/topics"
-            render={props => <Topics topics={this.state.topics} />}
+            render={props => <Topics {...props} topics={this.state.topics} />}
           />
 
           <Route
             exact
             path="/articles"
-            render={props => <Articles articles={this.state.articles} />}
+            render={props => (
+              <Articles {...props} articles={this.state.articles} />
+            )}
           />
 
           <Route
@@ -51,6 +55,7 @@ class App extends Component {
             render={props => {
               return (
                 <Articles
+                  {...props}
                   topics={this.state.topics}
                   articles={this.getArticlesByTopicId(
                     props.match.params.topictitle
