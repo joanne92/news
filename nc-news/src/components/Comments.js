@@ -18,12 +18,13 @@ class Comments extends Component {
   }
 
   render() {
-    console.log(this.state.comments);
     return (
       <div id="all-comments">
         <div id="input-box">
           <form action="">
-            <p>Comment</p>
+            <label id="name1">Comment</label>
+            <br />
+
             <input
               type="text"
               name="Comment"
@@ -64,7 +65,10 @@ class Comments extends Component {
   getCommentsByArticleId = articleid => {
     fetch(`https://nc-news-jo.herokuapp.com/api/articles/${articleid}/comments`)
       .then(res => res.json())
-      .then(res => this.setState({ comments: res.comments }));
+      .then(res => {
+        console.log(res);
+        this.setState({ comments: res.comments });
+      });
   };
 
   inputChange = newInput => {
@@ -74,7 +78,7 @@ class Comments extends Component {
   addComment = (text, articleid) => {
     axios
       .post(
-        `http://northcoders-news-api.herokuapp.com/api/articles/${articleid}/comments`,
+        `http:///nc-news-jo.herokuapp.com/api/articles/${articleid}/comments`,
         {
           comment: text
         }

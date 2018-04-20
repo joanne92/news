@@ -4,6 +4,7 @@ import "./App.css";
 import Articles from "./components/Articles";
 import Topics from "./components/Topics";
 import Comments from "./components/Comments";
+import Users from "./components/Users";
 import { Route } from "react-router-dom";
 
 class App extends Component {
@@ -71,16 +72,24 @@ class App extends Component {
               <Comments {...props} articleid={props.match.params.articleid} />
             )}
           />
+          <Route
+            exact
+            path="/users/:userid"
+            render={props => (
+              <Users
+                {...props}
+                userid={props.match.params.userid}
+                articles={this.getArticlesByUser(
+                  props.match.params.userid,
+                  this.state.articles
+                )}
+              />
+            )}
+          />
         </div>
       </div>
     );
   }
-
-  getUsers = () => {
-    fetch("https://nc-news-jo.herokuapp.com/api/users")
-      .then(res => res.json())
-      .then(res => this.setState({ users: res.users }));
-  };
 
   getAllTopics = () => {
     fetch("https://nc-news-jo.herokuapp.com/api/topics")
@@ -113,6 +122,12 @@ class App extends Component {
         return b.votes - a.votes;
       })
       .slice(0, 6);
+  };
+
+  getArticlesByUser = (id, articles) => {
+    return articles.filter(article => {
+      return article.created_by === id;
+    });
   };
 }
 export default App;

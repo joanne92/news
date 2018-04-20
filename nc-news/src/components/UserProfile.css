@@ -1,0 +1,25 @@
+#userProfile {
+  background-color: rgb(203, 225, 182);
+}
+
+.article-title {
+  background-color: white;
+  margin: 2%;
+  margin-right: 6%;
+  padding: 2%;
+  border: solid 1px white;
+  border-width: 5px;
+  border-radius: 25px;
+}
+
+img {
+  border-radius: 100px;
+  left: 50px;
+  margin-top: 5%;
+}
+
+.name {
+  font-weight: bold;
+  font-size: 20px;
+  display: inline;
+}

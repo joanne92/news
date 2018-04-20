@@ -4,12 +4,19 @@ import axios from "axios";
 
 class Articleid extends Component {
   state = {
-    votes: this.props.article.votes
+    votes: this.props.article.votes,
+    userName: ""
   };
+  componentDidMount() {
+    this.getUsersName(this.props.article);
+  }
 
+  componentWillReceiveProps(newProps) {
+    this.getUsersName(newProps.article);
+  }
   render() {
     const { article, i } = this.props;
-    console.log("votes", this.state.votes);
+
     return (
       <div className="article">
         <Link
@@ -29,7 +36,9 @@ class Articleid extends Component {
           onClick={() => this.voteDown(article._id)}
         />
         <li>Comments: {article.comments}</li>
-        <li>{article.created_by}</li>
+        <Link to={`/users/${article.created_by}`} className="article-user">
+          User: {article.created_by}
+        </Link>
       </div>
     );
   }
@@ -44,6 +53,14 @@ class Articleid extends Component {
     axios.put(`https://nc-news-jo.herokuapp.com/api/articles/${id}?vote=down`);
 
     this.setState({ votes: this.state.votes - 1 });
+  };
+
+  getUsersName = article => {
+    return this.props.users.filter(user => {
+      if (user._id === article.created_by) {
+        return this.setState({ userName: user.name });
+      }
+    });
   };
 }
 

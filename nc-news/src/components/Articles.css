@@ -43,8 +43,15 @@ li {
   color: red;
   font-size: 20px;
 }
+.fa.fa-arrow-circle-down:hover {
+  cursor: pointer;
+}
 
 .fa.fa-arrow-circle-up {
   color: green;
   font-size: 20px;
+}
+
+.fa.fa-arrow-circle-up:hover {
+  cursor: pointer;
 }

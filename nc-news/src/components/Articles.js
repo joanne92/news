@@ -14,14 +14,14 @@ class Articles extends Component {
   }
   render() {
     let { articles } = this.props;
-    console.log(this.state);
+
     return (
       <div id="all-articles">
         <ul>
           {articles.map((article, i) => {
             return (
               <div key={`${i}${article.title}`}>
-                <Articleid article={article} i={i} />
+                <Articleid article={article} i={i} users={this.state.users} />
               </div>
             );
           })}
@@ -38,20 +38,3 @@ class Articles extends Component {
 }
 
 export default Articles;
-
-// return (
-//   <div key={`${i}${article.title}`} className="article">
-//     <Link
-//       to={`/articles/${article._id}/comments`}
-//       className="article-title"
-//     >
-//       {article.title}
-//     </Link>
-//     <p className="article-body">{article.body}</p>
-//     <i className="fa fa-arrow-circle-up" />
-//     <li className="votes">{article.votes}</li>
-//     <i className="fa fa-arrow-circle-down" />
-//     <li>Comments: {article.comments}</li>
-//     <li>{article.created_by}</li>
-//   </div>
-// );
