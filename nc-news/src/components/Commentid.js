@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 class Commentid extends Component {
   state = {
@@ -20,11 +21,14 @@ class Commentid extends Component {
           className="fa fa-arrow-circle-down"
           onClick={() => this.voteDown(comment._id)}
         />
-        <li>User:{comment.created_by}</li>
-        <li>{comment.created_at}</li>
+
+        <Link to={`/users/${comment.created_by}`} className="comment-user">
+          User: {comment.created_by}
+        </Link>
+
         <li>
           <i
-            className="fas fa-trash"
+            className="fas fa-trash fa-lg"
             onClick={() => this.props.deleteComment(comment._id)}
           />
         </li>

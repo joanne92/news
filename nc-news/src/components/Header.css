@@ -5,6 +5,10 @@
   color: white;
 }
 
+.list {
+  top: -10px;
+}
+
 #nc-header {
   color: white;
   font-size: 40px;

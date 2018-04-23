@@ -15,19 +15,25 @@ class UserProfile extends Component {
     console.log(articles[0]);
 
     return (
-      <div id="userProfile">
-        <li className="name">Name: {user.name}</li>
-        <li className="name">UserName: {user.username}</li>
+      <div id="userProfile" className="container">
+        <div className="user-info">
+          <ul>
+            <li className="name">Name: {user.name}</li>
+            <li className="name">UserName: {user.username}</li>
+          </ul>
+        </div>
         <img src={`${user.avatar_url}`} id="profile-pic" />
-        <ul>
-          {articles.map(article => {
-            return (
-              <li key={`${article._id}`} className="article-title">
-                {article.title}
-              </li>
-            );
-          })}
-        </ul>
+        <div className="user-titles-list">
+          <ul>
+            {articles.map(article => {
+              return (
+                <li key={`${article._id}`} className="article-title">
+                  {article.title}
+                </li>
+              );
+            })}
+          </ul>
+        </div>
       </div>
     );
   }

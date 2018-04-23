@@ -22,14 +22,13 @@ class Comments extends Component {
       <div id="all-comments">
         <div id="input-box">
           <form action="">
-            <label id="name1">Comment</label>
+            <label id="input-comment">Leave a Comment!</label>
             <br />
 
             <input
               type="text"
-              name="Comment"
+              name="comment"
               id="comment-input"
-              placeholder="enter comment"
               value={this.state.input}
               onChange={event => this.inputChange(event.target.value)}
             />

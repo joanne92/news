@@ -12,6 +12,13 @@
   border-radius: 25px;
 }
 
+#input-comment {
+  color: white;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 30px;
+  font-weight: normal;
+}
+
 input {
   margin: 10px;
   height: 200px;
