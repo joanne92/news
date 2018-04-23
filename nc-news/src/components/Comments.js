@@ -65,7 +65,6 @@ class Comments extends Component {
     fetch(`https://nc-news-jo.herokuapp.com/api/articles/${articleid}/comments`)
       .then(res => res.json())
       .then(res => {
-        console.log(res);
         this.setState({ comments: res.comments });
       });
   };

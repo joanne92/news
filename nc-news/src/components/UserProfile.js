@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./UserProfile.css";
+import { Link } from "react-router-dom";
 
 class UserProfile extends Component {
   state = {
@@ -16,23 +17,32 @@ class UserProfile extends Component {
 
     return (
       <div id="userProfile" className="container">
-        <div className="user-info">
-          <ul>
-            <li className="name">Name: {user.name}</li>
-            <li className="name">UserName: {user.username}</li>
-          </ul>
-        </div>
-        <img src={`${user.avatar_url}`} id="profile-pic" />
-        <div className="user-titles-list">
-          <ul>
-            {articles.map(article => {
-              return (
-                <li key={`${article._id}`} className="article-title">
-                  {article.title}
-                </li>
-              );
-            })}
-          </ul>
+        <div className="row">
+          <div className="user-info col-lg-4 col-md-12 col-sm-12">
+            <img src={`${user.avatar_url}`} id="profile-pic" />
+            <ul>
+              <li className="name">Name: {user.name}</li>
+              <li className="name">UserName: {user.username}</li>
+            </ul>
+          </div>
+
+          <div className="user-titles-list col-lg-7 col-md-12 col-sm-12">
+            <p>Articles by {user.name}</p>
+            <ul>
+              {articles.map(article => {
+                return (
+                  <Link
+                    to={`/articles/${article._id}/comments`}
+                    className="article-title"
+                  >
+                    <li key={`${article._id}`} className="article-title single">
+                      {article.title}
+                    </li>
+                  </Link>
+                );
+              })}
+            </ul>
+          </div>
         </div>
       </div>
     );

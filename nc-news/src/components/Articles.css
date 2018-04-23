@@ -15,7 +15,7 @@
 .article-title {
   text-align: center;
   font-size: 20px;
-  color: rgb(122, 167, 136);
+  color: rgb(88, 125, 100);
 }
 
 .article-title:hover {
@@ -32,7 +32,7 @@ li {
   margin-right: 10%;
   margin-left: 5%;
   margin-top: 0px;
-  color: rgb(122, 167, 136);
+  color: rgb(88, 125, 100);
 }
 
 .votes {

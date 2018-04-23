@@ -3,28 +3,46 @@
   width: 100%;
 }
 
+.name {
+  font-weight: bold;
+  font-size: 20px;
+  color: rgb(119, 174, 136);
+}
+
 .user-titles-list {
   background-color: white;
   margin: 2%;
-  margin-right: 6%;
   padding: 2%;
   border: solid 1px white;
   border-width: 5px;
   border-radius: 25px;
-}
-
-li.article-title {
-  display: inline;
+  height: 20%;
 }
 
 img {
   border-radius: 100px;
-  left: 50px;
-  margin-top: 5%;
+  margin-left: 20%;
+  margin-top: 8%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10%;
 }
 
-.name {
+.article-title {
+  text-align: left;
+  list-style: circle;
+}
+
+.single {
+  color: rgb(127, 198, 150);
+  float: left;
+}
+
+.user-titles-list p {
+  text-align: center;
   font-weight: bold;
-  font-size: 20px;
-  display: block;
+  font-size: 23px;
+  color: green;
+  text-decoration: underline;
 }
