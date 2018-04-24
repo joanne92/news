@@ -76,7 +76,7 @@ class Comments extends Component {
   addComment = (text, articleid) => {
     axios
       .post(
-        `https:///nc-news-jo.herokuapp.com/api/articles/${articleid}/comments`,
+        `https://nc-news-jo.herokuapp.com/api/articles/${articleid}/comments`,
         {
           comment: text
         }

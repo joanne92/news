@@ -47,16 +47,6 @@ class Commentid extends Component {
 
     this.setState({ votes: this.state.votes - 1 });
   };
-
-  // deleteComment = id => {
-  //   // const newArr = this.state.comments.filter(comment => {
-  //   //   return comment._id !== id;
-  //   // });
-  //   // this.setState({ comments: newArr });
-  //   axios
-  //     .delete(`https://nc-news-jo.herokuapp.com/api/comments/${id}`)
-  //     .then(res => console.log(res));
-  // };
 }
 
 export default Commentid;
