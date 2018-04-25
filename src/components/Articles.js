@@ -14,7 +14,7 @@ class Articles extends Component {
   }
   render() {
     let { articles } = this.props;
-
+    // console.log(articles);
     return (
       <div id="all-articles">
         <ul>

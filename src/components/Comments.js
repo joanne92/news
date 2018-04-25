@@ -7,10 +7,12 @@ import Commentid from "./Commentid";
 class Comments extends Component {
   state = {
     comments: [],
-    input: ""
+    input: "",
+    users: []
   };
   componentDidMount() {
     this.getCommentsByArticleId(this.props.articleid);
+    this.getAllUsers();
   }
 
   componentWillReceiveProps(newProps) {
@@ -52,6 +54,7 @@ class Comments extends Component {
                   comment={comment}
                   i={i}
                   deleteComment={this.deleteComment}
+                  users={this.state.users}
                 />
               </div>
             );
@@ -100,6 +103,12 @@ class Comments extends Component {
     axios
       .delete(`https://nc-news-jo.herokuapp.com/api/comments/${id}`)
       .then(res => console.log(res));
+  };
+
+  getAllUsers = () => {
+    fetch("https://nc-news-jo.herokuapp.com/api/users")
+      .then(res => res.json())
+      .then(res => this.setState({ users: res.users }));
   };
 }
 

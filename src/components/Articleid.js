@@ -13,10 +13,12 @@ class Articleid extends Component {
 
   componentWillReceiveProps(newProps) {
     this.getUsersName(newProps.article);
+    this.setState({});
   }
+
   render() {
     const { article, i } = this.props;
-
+    console.log(this.state);
     return (
       <div className="article">
         <Link
@@ -37,7 +39,7 @@ class Articleid extends Component {
         />
         <li>Comments: {article.comments}</li>
         <Link to={`/users/${article.created_by}`} className="article-user">
-          User: {article.created_by}
+          User: {this.state.userName}
         </Link>
       </div>
     );
@@ -56,7 +58,7 @@ class Articleid extends Component {
   };
 
   getUsersName = article => {
-    return this.props.users.filter(user => {
+    this.props.users.filter(user => {
       if (user._id === article.created_by) {
         return this.setState({ userName: user.name });
       }

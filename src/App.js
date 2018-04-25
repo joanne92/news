@@ -10,7 +10,8 @@ import { Route } from "react-router-dom";
 class App extends Component {
   state = {
     topics: [],
-    articles: []
+    articles: [],
+    newArts: []
   };
 
   componentDidMount() {
@@ -46,7 +47,11 @@ class App extends Component {
             exact
             path="/articles"
             render={props => (
-              <Articles {...props} articles={this.state.articles} />
+              <Articles
+                {...props}
+                articles={this.state.articles}
+                getUsersName={this.getUsersName}
+              />
             )}
           />
 
@@ -61,6 +66,7 @@ class App extends Component {
                   articles={this.getArticlesByTopicId(
                     props.match.params.topictitle
                   )}
+                  getUsersName={this.getUsersName}
                 />
               );
             }}
@@ -69,7 +75,11 @@ class App extends Component {
             exact
             path="/articles/:articleid/comments"
             render={props => (
-              <Comments {...props} articleid={props.match.params.articleid} />
+              <Comments
+                {...props}
+                articleid={props.match.params.articleid}
+                getUsersName={this.getUsersName}
+              />
             )}
           />
           <Route
@@ -111,6 +121,15 @@ class App extends Component {
         topicid = topic._id;
       }
     });
+    // .then(() => {
+    //   fetch(`https://nc-news-jo.herokuapp.com/api/topics/${topicid}/articles`)
+    //     .then(res => res.json())
+    //     .then(res => {
+    //       console.log(res.articles, topictitle);
+    //       return res.articles;
+    //     });
+    // });
+
     return this.state.articles.filter(article => {
       return article.belongs_to === topicid;
     });
@@ -127,6 +146,14 @@ class App extends Component {
   getArticlesByUser = (id, articles) => {
     return articles.filter(article => {
       return article.created_by === id;
+    });
+  };
+
+  getUsersName = article => {
+    return this.props.users.filter(user => {
+      if (user._id === article.created_by) {
+        return this.setState({ userName: user.name });
+      }
     });
   };
 }

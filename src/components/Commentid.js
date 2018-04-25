@@ -5,8 +5,19 @@ import { Link } from "react-router-dom";
 class Commentid extends Component {
   state = {
     votes: this.props.comment.votes,
-    input: ""
+    input: "",
+    userName: ""
   };
+
+  componentDidMount() {
+    this.getUsersName(this.props.comment);
+  }
+
+  componentWillReceiveProps(newProps) {
+    this.getUsersName(newProps.comment);
+    this.setState({});
+  }
+
   render() {
     const { comment, i } = this.props;
     return (
@@ -23,7 +34,7 @@ class Commentid extends Component {
         />
 
         <Link to={`/users/${comment.created_by}`} className="comment-user">
-          User: {comment.created_by}
+          User: {this.state.userName}
         </Link>
 
         <li>
@@ -46,6 +57,14 @@ class Commentid extends Component {
     axios.put(`https://nc-news-jo.herokuapp.com/api/comments/${id}?vote=down`);
 
     this.setState({ votes: this.state.votes - 1 });
+  };
+
+  getUsersName = comment => {
+    this.props.users.filter(user => {
+      if (user._id === comment.created_by) {
+        return this.setState({ userName: user.name });
+      }
+    });
   };
 }
 
