@@ -62,3 +62,20 @@ li {
   font-size: 19px;
   color: green;
 }
+
+.fa-comment {
+  color: green;
+  padding-left: 35px;
+  padding-right: 30px;
+}
+
+.fa-stack-1x {
+  color: white;
+  padding-left: 45px;
+  padding-right: 30px;
+}
+
+.fa-user {
+  padding-left: 30px;
+  padding-right: 30px;
+}
