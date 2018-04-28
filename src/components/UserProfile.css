@@ -1,6 +1,8 @@
 #userProfile {
   background-color: rgb(203, 225, 182);
   width: 100%;
+  font-family: "Do Hyeon", sans-serif;
+  font-size: 30px;
 }
 
 .name {
