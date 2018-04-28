@@ -39,7 +39,7 @@ class Articleid extends Component {
             className="fa fa-arrow-circle-down"
             onClick={() => this.voteDown(article._id)}
           />
-          <li>Comments: {article.comments}</li>
+          <li className="art-comment">Comments: {article.comments}</li>
           <Link to={`/users/${article.created_by}`} className="article-user">
             {/* User: {this.state.userName} */}
             <i className="fas fa-user" />

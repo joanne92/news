@@ -56,3 +56,9 @@ li {
 .fa.fa-arrow-circle-up:hover {
   cursor: pointer;
 }
+
+.art-comment {
+  font-family: "Do Hyeon", sans-serif;
+  font-size: 19px;
+  color: green;
+}
