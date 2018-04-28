@@ -1,27 +1,33 @@
-.col-lg-12 {
+.big-header {
   background-color: rgb(127, 198, 150);
   text-align: center;
-  height: 100px;
   color: white;
-}
-
-.list {
-  top: -10px;
+  display: inline;
 }
 
 #nc-header {
   color: white;
-  font-size: 40px;
+  font-size: 2em;
   font-weight: bold;
 }
 
 .topic-name {
-  margin: 50px;
   color: white;
   font-size: 25px;
   font-weight: normal;
+  font-size: 2em;
+  /* background-color: blueviolet; */
+  /* margin-right: 5px; */
 }
 
 .topic-name:hover {
   color: white;
+}
+
+/* .nav-item {
+  text-align: center;
+} */
+
+.navbar-nav {
+  text-align: center;
 }

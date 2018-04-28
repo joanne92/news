@@ -26,7 +26,7 @@ class UserProfile extends Component {
             </ul>
           </div>
 
-          <div className="user-titles-list col-lg-7 col-md-12 col-sm-12">
+          <div className="user-titles-list col-lg-7 col-md-11 col-sm-11">
             <p>Articles by {user.name}</p>
             <ul>
               {articles.map(article => {

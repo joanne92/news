@@ -23,17 +23,19 @@ class Comments extends Component {
     return (
       <div id="all-comments">
         <div id="input-box">
-          <form action="">
+          <form>
             <label id="input-comment">Leave a Comment!</label>
             <br />
-
-            <input
-              type="text"
-              name="comment"
-              id="comment-input"
-              value={this.state.input}
-              onChange={event => this.inputChange(event.target.value)}
-            />
+            <div>
+              <input
+                type="text"
+                name="comment"
+                className="col-sm-8"
+                id="comment-input"
+                value={this.state.input}
+                onChange={event => this.inputChange(event.target.value)}
+              />
+            </div>
 
             <button
               className="btn btn-success"
@@ -46,20 +48,22 @@ class Comments extends Component {
             </button>
           </form>
         </div>
-        <ul>
-          {this.state.comments.map((comment, i) => {
-            return (
-              <div key={`${comment._id}`}>
-                <Commentid
-                  comment={comment}
-                  i={i}
-                  deleteComment={this.deleteComment}
-                  users={this.state.users}
-                />
-              </div>
-            );
-          })}
-        </ul>
+        <div className="all-articles">
+          <ul>
+            {this.state.comments.map((comment, i) => {
+              return (
+                <div key={`${comment._id}`}>
+                  <Commentid
+                    comment={comment}
+                    i={i}
+                    deleteComment={this.deleteComment}
+                    users={this.state.users}
+                  />
+                </div>
+              );
+            })}
+          </ul>
+        </div>
       </div>
     );
   }

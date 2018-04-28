@@ -19,10 +19,8 @@
   font-weight: normal;
 }
 
-input {
-  margin: 10px;
+#comment-input {
   height: 200px;
-  width: 500px;
   border: 2px solid green;
   border-radius: 20px;
 }
@@ -38,6 +36,6 @@ li {
 }
 
 .btn.btn-success {
-  margin-top: 120px;
+  margin-top: 10px;
   margin-left: 30px;
 }

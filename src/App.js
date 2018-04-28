@@ -22,7 +22,7 @@ class App extends Component {
   render() {
     return (
       <div className="container">
-        <div className="row">
+        <div className="row" id="rowheader">
           <Header />
         </div>
         <div className="row">
@@ -149,12 +149,12 @@ class App extends Component {
     });
   };
 
-  getUsersName = article => {
-    return this.props.users.filter(user => {
-      if (user._id === article.created_by) {
-        return this.setState({ userName: user.name });
-      }
-    });
-  };
+  // getUsersName = article => {
+  //   return this.props.users.filter(user => {
+  //     if (user._id === article.created_by) {
+  //       return this.setState({ userName: user.name });
+  //     }
+  //   });
+  // };
 }
 export default App;

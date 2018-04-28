@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-// import { Link } from "react-router-dom";
 
 import Articleid from "./Articleid";
 
@@ -9,19 +8,20 @@ class Articles extends Component {
   state = {
     users: []
   };
-  componentDidMount() {
-    this.getAllUsers();
-  }
+  // componentDidMount() {
+  //   this.getAllUsers();
+  // }
   render() {
     let { articles } = this.props;
-    // console.log(articles);
+
     return (
-      <div id="all-articles">
+      <div className="all-articles">
         <ul>
           {articles.map((article, i) => {
             return (
               <div key={`${i}${article.title}`}>
-                <Articleid article={article} i={i} users={this.state.users} />
+                <Articleid article={article} i={i} />
+                {/* users={this.state.users} */}
               </div>
             );
           })}
@@ -30,11 +30,11 @@ class Articles extends Component {
     );
   }
 
-  getAllUsers = () => {
-    fetch("https://nc-news-jo.herokuapp.com/api/users")
-      .then(res => res.json())
-      .then(res => this.setState({ users: res.users }));
-  };
+  // getAllUsers = () => {
+  //   fetch("https://nc-news-jo.herokuapp.com/api/users")
+  //     .then(res => res.json())
+  //     .then(res => this.setState({ users: res.users }));
+  // };
 }
 
 export default Articles;
