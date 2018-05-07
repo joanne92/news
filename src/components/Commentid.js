@@ -10,15 +10,6 @@ class Commentid extends Component {
     userName: ""
   };
 
-  // componentDidMount() {
-  //   this.getUsersName(this.props.comment);
-  // }
-
-  // componentWillReceiveProps(newProps) {
-  //   this.getUsersName(newProps.comment);
-  //   this.setState({});
-  // }
-
   render() {
     const { comment, i } = this.props;
     return (
@@ -62,14 +53,6 @@ class Commentid extends Component {
 
     this.setState({ votes: this.state.votes - 1 });
   };
-
-  // getUsersName = comment => {
-  //   this.props.users.filter(user => {
-  //     if (user._id === comment.created_by) {
-  //       return this.setState({ userName: user.name });
-  //     }
-  //   });
-  // };
 }
 
 export default Commentid;

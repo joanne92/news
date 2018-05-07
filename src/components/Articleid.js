@@ -8,14 +8,6 @@ class Articleid extends Component {
     votes: this.props.article.votes,
     userName: ""
   };
-  // componentDidMount() {
-  //   this.getUsersName(this.props.article);
-  // }
-
-  // componentWillReceiveProps(newProps) {
-  //   this.getUsersName(newProps.article);
-  //   this.setState({});
-  // }
 
   render() {
     const { article, i } = this.props;
@@ -49,9 +41,7 @@ class Articleid extends Component {
             </span>
           </Link>
 
-          {/* <li className="art-comment">Comments: {article.comments}</li> */}
           <Link to={`/users/${article.created_by}`} className="article-user">
-            {/* User: {this.state.userName} */}
             <i className="fas fa-user fa-lg" />
           </Link>
         </div>
@@ -70,14 +60,6 @@ class Articleid extends Component {
 
     this.setState({ votes: this.state.votes - 1 });
   };
-
-  // getUsersName = article => {
-  //   this.props.users.filter(user => {
-  //     if (user._id === article.created_by) {
-  //       return this.setState({ userName: user.name });
-  //     }
-  //   });
-  // };
 }
 
 export default Articleid;

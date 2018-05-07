@@ -121,14 +121,6 @@ class App extends Component {
         topicid = topic._id;
       }
     });
-    // .then(() => {
-    //   fetch(`https://nc-news-jo.herokuapp.com/api/topics/${topicid}/articles`)
-    //     .then(res => res.json())
-    //     .then(res => {
-    //       console.log(res.articles, topictitle);
-    //       return res.articles;
-    //     });
-    // });
 
     return this.state.articles.filter(article => {
       return article.belongs_to === topicid;
@@ -148,13 +140,5 @@ class App extends Component {
       return article.created_by === id;
     });
   };
-
-  // getUsersName = article => {
-  //   return this.props.users.filter(user => {
-  //     if (user._id === article.created_by) {
-  //       return this.setState({ userName: user.name });
-  //     }
-  //   });
-  // };
 }
 export default App;

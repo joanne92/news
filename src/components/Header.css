@@ -18,17 +18,11 @@
   font-size: 25px;
   font-weight: normal;
   font-size: 2em;
-  /* background-color: blueviolet; */
-  /* margin-right: 5px; */
 }
 
 .topic-name:hover {
   color: white;
 }
-
-/* .nav-item {
-  text-align: center;
-} */
 
 .navbar-nav {
   text-align: center;
