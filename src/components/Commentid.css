@@ -1,5 +1,6 @@
 .fa-user {
   color: green;
+  top: 0px;
 }
 
 .fa-trash {
@@ -7,6 +8,6 @@
 }
 
 .icons {
-  text-align: center;
-  padding-left: 8%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 }

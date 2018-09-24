@@ -22,28 +22,35 @@ class Articleid extends Component {
         </Link>
         <p className="article-body">{article.body}</p>
         <div className="icons">
-          <i
-            className="fa fa-arrow-circle-up fa-2x"
-            onClick={() => this.voteUp(article._id)}
-          />
-          <li className="votes">{this.state.votes}</li>
-          <i
-            className="fa fa-arrow-circle-down fa-2x"
-            onClick={() => this.voteDown(article._id)}
-          />
-          <Link
-            to={`/articles/${article._id}/comments`}
-            className="article-title"
-          >
-            <span class="fa-stack">
-              <i class="fa fa-comment fa-stack-2x" />
-              <strong class="fa-stack-1x">{article.comments}</strong>
-            </span>
-          </Link>
-
-          <Link to={`/users/${article.created_by}`} className="article-user">
-            <i className="fas fa-user fa-lg" />
-          </Link>
+          <div className="article-votes">
+            <i
+              className="fa fa-arrow-circle-up fa-2x"
+              onClick={() => this.voteUp(article._id)}
+            />
+            <div className="votes">{this.state.votes}</div>
+            <i
+              className="fa fa-arrow-circle-down fa-2x"
+              onClick={() => this.voteDown(article._id)}
+            />
+          </div>
+          <div className="article-comments">
+            <Link to={`/articles/${article._id}/comments`}>
+              {/* <span class="fa-stack">
+                <i class="fa fa-comment fa-stack-2x" />
+                <li className="test">{article.comments}</li>
+                <div className="test">{article.comments}</div>
+              </span> */}
+              <div className="woo">
+                <i class="fa fa-comment" />
+                <div className="test">{article.comments}</div>
+              </div>
+            </Link>
+          </div>
+          <div className="article-commenter">
+            <Link to={`/users/${article.created_by}`} className="article-user">
+              <i className="fas fa-user fa-lg" />
+            </Link>
+          </div>
         </div>
       </div>
     );

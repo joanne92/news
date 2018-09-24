@@ -1,3 +1,64 @@
+.user-container {
+  width: 100%;
+  /* height: 600px; */
+  background-color: purple;
+}
+
+.git push -u origin master-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-template-rows: 1fr;
+  background-color: aqua;
+}
+
+.profile-pic {
+  height: 200px;
+}
+
+.avatar-img {
+  background-color: rgb(203, 225, 182);
+}
+
+.user-details {
+  /* display: flex;
+  flex-direction: column; */
+  background-color: white;
+  margin: 10px 50px;
+  border-radius: 20em;
+}
+
+.bottom-row {
+  background-color: rgb(203, 225, 182);
+}
+
+.title-list-container {
+  background-color: white;
+  margin: 40px 20px 20px 20px;
+  border-radius: 5em;
+  position: "relative";
+  padding-top: 10px;
+  /* height: 80%; */
+  color: green;
+}
+
+.title-list {
+  display: flex;
+  align-items: flex-start;
+  left: -25px;
+  position: relative;
+  color: green;
+}
+
+.username {
+  /* background-color: blue; */
+}
+
+.users-article-titles {
+  background-color: red;
+  /* grid-column: 2;
+  grid-row: 1 / span 2; */
+}
+
 #userProfile {
   background-color: rgb(203, 225, 182);
   width: 100%;
@@ -5,20 +66,31 @@
   font-size: 30px;
 }
 
+.article-header {
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
 .name {
   font-weight: bold;
   font-size: 20px;
-  color: rgb(67, 114, 82);
+  color: green;
+}
+
+.nameX {
+  font-weight: italic;
+  color: rgb(127, 198, 150);
 }
 
 .user-titles-list {
-  background-color: white;
+  /* background-color: white;
   margin: 2%;
   padding: 2%;
   border: solid 1px white;
   border-width: 5px;
   border-radius: 25px;
-  height: 20%;
+  height: 20%; */
 }
 
 img {
@@ -28,17 +100,22 @@ img {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 10%;
+  margin-bottom: 5%;
 }
 
 .article-title {
-  text-align: left;
-  list-style: circle;
+  /* text-align: left;
+  list-style: circle; */
+  /* display: inline-block; */
 }
 
 .single {
+  color: green;
+  /* float: left; */
+}
+
+.single:hover {
   color: rgb(127, 198, 150);
-  float: left;
 }
 
 .user-titles-list p {
@@ -47,4 +124,8 @@ img {
   font-size: 23px;
   color: green;
   text-decoration: underline;
+}
+
+.listzz {
+  display: block;
 }

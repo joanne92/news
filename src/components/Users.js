@@ -11,7 +11,7 @@ class Users extends Component {
 
   render() {
     return (
-      <div>
+      <div className="user-container">
         {this.state.users.map((user, i) => {
           if (user._id === this.props.userid) {
             return (

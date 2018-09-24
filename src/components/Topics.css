@@ -1,3 +1,12 @@
+.grid-topics {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  background-color: rgb(203, 225, 182);
+  width: 100%;
+  padding-top: 30px;
+}
+
 #all-topics {
   background-color: rgb(203, 225, 182);
   height: 400px;
@@ -6,8 +15,9 @@
 .topic {
   background-color: white;
   margin: 2%;
-  margin-right: 6%;
+  margin-right: 10%;
   padding: 2%;
+  margin-bottom: 30px;
   border: solid 1px white;
   border-width: 5px;
   border-radius: 25px;

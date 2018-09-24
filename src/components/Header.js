@@ -8,17 +8,17 @@ class Header extends Component {
     return (
       <div className="big-header col-sm-12 offset-lg.12">
         <nav class="navbar navbar-expand-sm">
-          <ul class="navbar-nav">
+          <div class="navbar-nav">
             <div>
-              <li class="nav-item active">
+              <div class="nav-item active">
                 <Link to="/" id="nc-header">
                   {"NC News"}
                 </Link>
-              </li>
+              </div>
             </div>
 
             <div>
-              <li class="nav-item">
+              <div class="nav-item">
                 <Link
                   to="/topics"
                   id="topics-header"
@@ -26,11 +26,11 @@ class Header extends Component {
                 >
                   Topics
                 </Link>
-              </li>
+              </div>
             </div>
 
             <div>
-              <li class="nav-item">
+              <div class="nav-item">
                 <Link
                   to="/articles"
                   id="articles-header"
@@ -38,9 +38,9 @@ class Header extends Component {
                 >
                   Articles
                 </Link>
-              </li>
+              </div>
             </div>
-          </ul>
+          </div>
         </nav>
       </div>
     );

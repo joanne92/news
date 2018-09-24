@@ -26,7 +26,7 @@ class Comments extends Component {
           <form>
             <label id="input-comment">Leave a Comment!</label>
             <br />
-            <div>
+            <div className="comment-input">
               <input
                 type="text"
                 name="comment"

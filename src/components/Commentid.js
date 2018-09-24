@@ -16,27 +16,29 @@ class Commentid extends Component {
       <div className="comment">
         <p className="article-body">{comment.body}</p>
         <div className="icons">
-          <i
-            className="fa fa-arrow-circle-up"
-            onClick={() => this.voteUp(comment._id)}
-          />
-          <li className="votes">{this.state.votes}</li>
-          <i
-            className="fa fa-arrow-circle-down"
-            onClick={() => this.voteDown(comment._id)}
-          />
-
-          <Link to={`/users/${comment.created_by}`} className="comment-user">
-            {/* User: {this.state.userName} */}
-            <i className="fas fa-user" />
-          </Link>
-
-          <li>
+          <div>
+            <i
+              className="fa fa-arrow-circle-up"
+              onClick={() => this.voteUp(comment._id)}
+            />
+            <li className="votes">{this.state.votes}</li>
+            <i
+              className="fa fa-arrow-circle-down"
+              onClick={() => this.voteDown(comment._id)}
+            />
+          </div>
+          <div>
+            <Link to={`/users/${comment.created_by}`} className="comment-user">
+              {/* User: {this.state.userName} */}
+              <i className="fas fa-user" />
+            </Link>
+          </div>
+          <div>
             <i
               className="fas fa-trash fa-lg"
               onClick={() => this.props.deleteComment(comment._id)}
             />
-          </li>
+          </div>
         </div>
       </div>
     );
