@@ -5,14 +5,11 @@
   top: -32px;
   left: -1px;
   font-size: 16px;
-  /* background-color: yellow; */
 }
 
 .article {
   background-color: white;
   margin: 30px 70px 30px 30px;
-  /* margin-right: 6%; */
-
   padding: 2% 2% 0 2%;
   border: solid 1px white;
   border-width: 5px;
@@ -33,54 +30,30 @@
 .icons {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  /* margin: "0 auto"; */
 }
 
 .article-votes {
   display: flex;
   justify-content: center;
   align-content: center;
-  /* position: relative;
-  top: 10px; */
   padding-top: 15px;
-  /* background-color: pink; */
 }
 
 .article-comments {
-  /* background-color: blue; */
   display: flex;
   align-items: center;
   justify-content: center;
-  /* position: relative; */
   padding-top: 15px;
 }
 
 .article-commenter {
-  /* background-color: pink; */
   padding-top: 15px;
-  /* position: relative;
-  top: 10px; */
 }
-
-/* ul {
-  text-align: center;
-} */
-/* 
-li {
-  display: inline-block;
-  text-align: center;
-  margin-right: 10%;
-  margin-left: 5%;
-  margin-top: 0px;
-  color: rgb(88, 125, 100);
-}  */
 
 .votes {
   margin: 0px 5px;
   color: black;
   font-size: 16px;
-  /* top: -20px; */
-  /* margin: 0px 10px; */
 }
 
 .fa.fa-arrow-circle-down {
@@ -100,30 +73,13 @@ li {
   cursor: pointer;
 }
 
-/* .art-comment {
-  font-family: "Do Hyeon", sans-serif;
-  font-size: 19px;
-  color: green;
-} */
-
 .fa-comment {
   color: green;
   font-size: 35px;
-
-  /* padding-left: 35px;
-  padding-right: 30px; */
 }
-
-/* .fa-stack-1x {
-  color: white;
-  padding-left: 45px;
-  padding-right: 30px;
-} */
 
 .fa-user {
   font-size: 25px;
   position: relative;
   top: 5px;
-  /* padding-left: 30px;
-  padding-right: 30px; */
 }

@@ -29,7 +29,6 @@ class Commentid extends Component {
           </div>
           <div>
             <Link to={`/users/${comment.created_by}`} className="comment-user">
-              {/* User: {this.state.userName} */}
               <i className="fas fa-user" />
             </Link>
           </div>

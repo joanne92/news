@@ -35,11 +35,6 @@ class Articleid extends Component {
           </div>
           <div className="article-comments">
             <Link to={`/articles/${article._id}/comments`}>
-              {/* <span class="fa-stack">
-                <i class="fa fa-comment fa-stack-2x" />
-                <li className="test">{article.comments}</li>
-                <div className="test">{article.comments}</div>
-              </span> */}
               <div className="woo">
                 <i class="fa fa-comment" />
                 <div className="test">{article.comments}</div>

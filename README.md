@@ -45,4 +45,4 @@ There is also a 'northcoder' user. Any comments you add will belong to the 'nort
 
 This sprint is among the ones we'll ask you to complete in order to put you forward for jobs. Put a little bit of love into it! :)
 
-You may use your own API or the one provided above. Start with yours and if you run into problems you can switch to ours (you should only have to change the URL). There's no point in spending a lot of time fixing your server, focus on the front-end.
+You may use your own API or the one provided above. Start with yours and if you run into problems you can switch to ours (you should only have to change the URL). There's no point in spending a lot of time fixing your server, focus on the front-end.# news

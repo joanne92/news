@@ -1,10 +1,8 @@
 .user-container {
   width: 100%;
-  /* height: 600px; */
-  background-color: purple;
 }
 
-.git push -u origin master-container {
+.grid-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   grid-template-rows: 1fr;
@@ -20,8 +18,6 @@
 }
 
 .user-details {
-  /* display: flex;
-  flex-direction: column; */
   background-color: white;
   margin: 10px 50px;
   border-radius: 20em;
@@ -49,16 +45,6 @@
   color: green;
 }
 
-.username {
-  /* background-color: blue; */
-}
-
-.users-article-titles {
-  background-color: red;
-  /* grid-column: 2;
-  grid-row: 1 / span 2; */
-}
-
 #userProfile {
   background-color: rgb(203, 225, 182);
   width: 100%;
@@ -83,16 +69,6 @@
   color: rgb(127, 198, 150);
 }
 
-.user-titles-list {
-  /* background-color: white;
-  margin: 2%;
-  padding: 2%;
-  border: solid 1px white;
-  border-width: 5px;
-  border-radius: 25px;
-  height: 20%; */
-}
-
 img {
   border-radius: 100px;
   margin-left: 20%;
@@ -103,15 +79,8 @@ img {
   margin-bottom: 5%;
 }
 
-.article-title {
-  /* text-align: left;
-  list-style: circle; */
-  /* display: inline-block; */
-}
-
 .single {
   color: green;
-  /* float: left; */
 }
 
 .single:hover {
@@ -124,8 +93,4 @@ img {
   font-size: 23px;
   color: green;
   text-decoration: underline;
-}
-
-.listzz {
-  display: block;
 }

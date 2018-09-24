@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 class Topics extends Component {
   render() {
     return (
-      // <div className="col-lg-12" id="all-topics">
       <div className="grid-topics">
         <ul>
           {this.props.topics.map((topic, i) => {
